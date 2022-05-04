@@ -665,19 +665,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\endri\\.nuget\\packages\\": {}
+    "C:\\Users\\artsh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\endri\\Desktop\\New folder\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\artsh\\Desktop\\ProjektiLAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\endri\\Desktop\\New folder\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\endri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\endri\\Desktop\\New folder\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\artsh\\Desktop\\ProjektiLAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\artsh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\artsh\\Desktop\\ProjektiLAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\endri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\artsh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
