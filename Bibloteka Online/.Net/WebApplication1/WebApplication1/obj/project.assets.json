@@ -665,19 +665,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Main PC\\.nuget\\packages\\": {}
+    "C:\\Users\\endri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Main PC\\Desktop\\Testi per Lab\\ProvoPerHerTeFundit\\ReactJS-NetCoreWebAPI-MSSQL-main\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\endri\\Desktop\\New folder\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\Main PC\\Desktop\\Testi per Lab\\ProvoPerHerTeFundit\\ReactJS-NetCoreWebAPI-MSSQL-main\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\Main PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Main PC\\Desktop\\Testi per Lab\\ProvoPerHerTeFundit\\ReactJS-NetCoreWebAPI-MSSQL-main\\api\\WebApplication1\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\endri\\Desktop\\New folder\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\endri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\endri\\Desktop\\New folder\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Main PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\endri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

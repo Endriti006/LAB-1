@@ -4,6 +4,7 @@ import {Home} from './Home';
 import {Department} from './Department';
 import {Employee} from './Employee';
 import {BrowserRouter, Route, Switch,NavLink} from 'react-router-dom';
+import {ShtoAbonuesin} from './ShtoAbonuesin'
 
 function App() {
   return (
@@ -30,6 +31,11 @@ function App() {
               Stafi
             </NavLink>
           </li>
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/abonuesin">
+            Abonuesin
+            </NavLink>
+          </li>
           
         </ul>
       </nav>
@@ -38,7 +44,7 @@ function App() {
         <Route path='/home' component={Home}/>
         <Route path='/department' component={Department}/>
         <Route path='/employee' component={Employee}/>
-        
+        <Route path='/abonuesin' component={ShtoAbonuesin}/>
       </Switch>
     </div>
     </BrowserRouter>

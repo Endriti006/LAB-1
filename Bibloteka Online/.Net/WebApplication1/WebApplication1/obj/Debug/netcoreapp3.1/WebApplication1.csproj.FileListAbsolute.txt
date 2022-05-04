@@ -60,3 +60,34 @@ C:\Users\Main PC\Desktop\Testi per Lab\ProvoPerHerTeFundit\ReactJS-NetCoreWebAPI
 C:\Users\Main PC\Desktop\Testi per Lab\ProvoPerHerTeFundit\ReactJS-NetCoreWebAPI-MSSQL-main\api\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.dll
 C:\Users\Main PC\Desktop\Testi per Lab\ProvoPerHerTeFundit\ReactJS-NetCoreWebAPI-MSSQL-main\api\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.pdb
 C:\Users\Main PC\Desktop\Testi per Lab\ProvoPerHerTeFundit\ReactJS-NetCoreWebAPI-MSSQL-main\api\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.StaticWebAssets.xml
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.exe
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.deps.json
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.runtimeconfig.json
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.runtimeconfig.dev.json
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.pdb
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.AssemblyReference.cache
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.AssemblyInfoInputs.cache
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.AssemblyInfo.cs
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\staticwebassets\WebApplication1.StaticWebAssets.Manifest.cache
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorTargetAssemblyInfo.cache
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.CopyComplete
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.dll
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.pdb
+C:\Users\endri\Desktop\New folder\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
