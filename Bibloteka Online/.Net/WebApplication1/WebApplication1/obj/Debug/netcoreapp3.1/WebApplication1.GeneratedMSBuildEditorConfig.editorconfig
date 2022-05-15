@@ -1,7 +1,3 @@
 is_global = true
 build_property.RootNamespace = WebApplication1
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\Main PC\Desktop\Projekti LAB1\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\
-=======
-build_property.ProjectDir = C:\Users\artsh\Desktop\Projektiiiii\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\
->>>>>>> 2580138a59f0b053466f688bfe39c4654013702f
+build_property.ProjectDir = c:\Users\artsh\Desktop\Projektiiiii\LAB-1\Bibloteka Online\.Net\WebApplication1\WebApplication1\
