@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aXcKAvaFAzJCLfj47F7W9wkeLFQHPVil1KLoVNplK9rIUz5M1bpb2WHLh5zokGqQLCKrTPlzWDsDdOqr0m0COw==",
+  "dgSpecHash": "8oC9sggD50pNbAeKtu5917/8KoO4nGTvYZ3KBOEG2aJWfFjtwTUXaQj1Vg208nhsqsh2zCfjU9Gc9AWANnMQSA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\artsh\\Desktop\\ProjektiLAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\artsh\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.16\\microsoft.aspnetcore.jsonpatch.3.1.16.nupkg.sha512",
     "C:\\Users\\artsh\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.16\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.16.nupkg.sha512",

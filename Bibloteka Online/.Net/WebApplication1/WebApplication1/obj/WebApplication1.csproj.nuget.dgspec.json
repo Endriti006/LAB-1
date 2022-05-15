@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\artsh\\Desktop\\ProjektiLAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\artsh\\Desktop\\ProjektiLAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\artsh\\Desktop\\ProjektiLAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\artsh\\Desktop\\ProjektiLAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\artsh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artsh\\Desktop\\ProjektiLAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\artsh\\AppData\\Roaming\\NuGet\\NuGet.Config",

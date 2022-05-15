@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,15 +11,16 @@ using WebApplication1.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 
+
 namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AbonuesiController : ControllerBase
+    public class KujdestariaController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _env;
-        public AbonuesiController(IConfiguration configuration, IWebHostEnvironment env)
+        public KujdestariaController(IConfiguration configuration,IWebHostEnvironment env)
         {
             _configuration = configuration;
             _env = env;
@@ -30,10 +31,10 @@ namespace WebApplication1.Controllers
         public JsonResult Get()
         {
             string query = @"
-                            select AbonuesiId, fullName,Shkollimi,VitiLindjes,Vendbanimi,
-                            convert(varchar(10),DateOfJoining,120) as DateOfJoining
+                            select KujdestariaID, dita, nderrimi,
+                            orari_Nga , orari_Deri                            
                             from
-                            dbo.Abonuesi
+                            dbo.Kujdestaria
                             ";
 
             DataTable table = new DataTable();
@@ -55,12 +56,12 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public JsonResult Post(Abonuesi ab)
+        public JsonResult Post(Kujdestaria kuj)
         {
             string query = @"
-                           insert into dbo.Abonuesi
-                           (fullName,Shkollimi,DateOfJoining,VitiLindjes,Vendbanimi)
-                    values (@fullName,@Shkollimi,@DateOfJoining,@VitiLindjes,@Vendbanimi)
+                           insert into dbo.Kujdestaria
+                           (dita, nderrimi, orari_Nga, orari_Deri)
+                    values (@dita, @nderrimi, @orari_Nga, @orari_Deri)
                             ";
 
             DataTable table = new DataTable();
@@ -71,11 +72,10 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@fullName", ab.fullName);
-                    myCommand.Parameters.AddWithValue("@Shkollimi", ab.Shkollimi);
-                    myCommand.Parameters.AddWithValue("@DateOfJoining", ab.DateOfJoining);
-                    myCommand.Parameters.AddWithValue("@VitiLindjes", ab.VitiLindjes);
-                    myCommand.Parameters.AddWithValue("@Vendbanimi", ab.Vendbanimi);
+                    myCommand.Parameters.AddWithValue("@dita", kuj.dita);
+                    myCommand.Parameters.AddWithValue("@nderrimi", kuj.nderrimi);
+                    myCommand.Parameters.AddWithValue("@orari_Nga", kuj.orari_Nga);
+                    myCommand.Parameters.AddWithValue("@orari_Deri", kuj.orari_Deri);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
@@ -88,16 +88,15 @@ namespace WebApplication1.Controllers
 
 
         [HttpPut]
-        public JsonResult Put(Abonuesi ab)
+        public JsonResult Put(Kujdestaria kuj)
         {
             string query = @"
-                           update dbo.Abonuesi
-                           set fullName= @fullName,
-                            Shkollimi=@Shkollimi,
-                            DateOfJoining=@DateOfJoining,
-                            VitiLindjes=@VitiLindjes
-                            Vendbanimi=@Vendbanimi
-                            where AbonuesiId = @AbonuesiId
+                           update dbo.Kujdestaria
+                           set dita = @dita,
+                            nderrimi = @nderrimi,
+                            orari_Nga = @orari_Nga,
+                            orari_Deri = @orari_Deri
+                            where KujdestariaID = @KujdestariaID
                             ";
 
             DataTable table = new DataTable();
@@ -108,12 +107,11 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@AbonuesiId", ab.AbonuesiId);
-                    myCommand.Parameters.AddWithValue("@fullName", ab.fullName);
-                    myCommand.Parameters.AddWithValue("@Shkollimi", ab.Shkollimi);
-                    myCommand.Parameters.AddWithValue("@DateOfJoining", ab.DateOfJoining);
-                    myCommand.Parameters.AddWithValue("@VitiLindjes", ab.VitiLindjes);
-                    myCommand.Parameters.AddWithValue("@Vendbanimi", ab.Vendbanimi);
+                    myCommand.Parameters.AddWithValue("@KujdestariaID", kuj.KujdestariaID);
+                    myCommand.Parameters.AddWithValue("@dita", kuj.dita);
+                    myCommand.Parameters.AddWithValue("@nderrimi", kuj.nderrimi);
+                    myCommand.Parameters.AddWithValue("@orari_Nga", kuj.orari_Nga);
+                    myCommand.Parameters.AddWithValue("@orari_Deri", kuj.orari_Deri);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
@@ -128,8 +126,8 @@ namespace WebApplication1.Controllers
         public JsonResult Delete(int id)
         {
             string query = @"
-                           delete from dbo.Abonuesi
-                            where AbonuesiId=@AbonuesiId
+                           delete from dbo.Kujdestaria
+                            where KujdestariaID = @KujdestariaID
                             ";
 
             DataTable table = new DataTable();
@@ -140,7 +138,7 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@AbonuesiId", id);
+                    myCommand.Parameters.AddWithValue("@KujdestariaID", id);
 
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
@@ -153,7 +151,8 @@ namespace WebApplication1.Controllers
         }
 
 
+       
+        
+
     }
 }
-
-

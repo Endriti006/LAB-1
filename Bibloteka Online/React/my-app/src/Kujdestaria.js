@@ -1,27 +1,26 @@
 import React, { Component } from "react";
 import { variables } from "./Variables.js";
 
-export class ShtoAbonuesin extends Component {
+export class Kujdestaria extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      abonuesi: [],
+      kujdestaria: [],
       modalTitle: "",
-      AbonuesiId: 0,
-      fullName: "",
-      Shkollimi: "",
-      DateOfJoining: "",
-      VitiLindjes: "",
-      Vendbanimi: "",
+      Kujdestaria: 0,
+      dita: "",
+      nderrimi: "",
+      orari_Nga: "",
+      orari_Deri: "",
     };
   }
 
   refreshList() {
-    fetch(variables.API_URL + "abonuesi")
+    fetch(variables.API_URL + "kujdestaria")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ abonuesi: data });
+        this.setState({ kujdestaria: data });
       });
   }
 
@@ -29,17 +28,17 @@ export class ShtoAbonuesin extends Component {
     this.refreshList();
   }
 
-  changefullName = (e) => {
-    this.setState({ fullName: e.target.value });
+  changedita = (e) => {
+    this.setState({ dita: e.target.value });
   };
-  changeShkollimi = (e) => {
-    this.setState({ Shkollimi: e.target.value });
+  changenderrimi = (e) => {
+    this.setState({ nderrimi: e.target.value });
   };
-  changeDateOfJoining = (e) => {
-    this.setState({ DateOfJoining: e.target.value });
+  changeOrariNga = (e) => {
+    this.setState({ orari_Nga: e.target.value });
   };
-  changeVitiLindjes = (e) => {
-    this.setState({ VitiLindjes: e.target.value });
+  changeOrariDeri = (e) => {
+    this.setState({ orari_Deri: e.target.value });
   };
   changeVendbanimi = (e) => {
     this.setState({ Vendbanimi: e.target.value });
@@ -47,39 +46,38 @@ export class ShtoAbonuesin extends Component {
 
   addClick() {
     this.setState({
-      modalTitle: "Shto Abonuesin",
-      AbonuesiId: 0,
-      fullName: "",
-      Shkollimi: "",
-      DateOfJoining: "",
-      VitiLindjes: "",
+      modalTitle: "Shto Kujdestarine",
+      KujdestariaID: 0,
+      dita: "",
+      nderrimi: "",
+      orari_Nga: "",
+      orari_Deri: "",
       Vendbanimi: "",
     });
   }
-  editClick(ab) {
+  editClick(kuj) {
     this.setState({
-      modalTitle: "Edit Abonuesin",
-      AbonuesiId: ab.AbonuesiId,
-      fullName: ab.fullName,
-      Shkollimi: ab.Shkollimi,
-      DateOfJoining: ab.DateOfJoining,
-      VitiLindjes: ab.VitiLindjes,
-      Vendbanimi: ab.Vendbanimi,
+      modalTitle: "Edit Kujdestaria",
+      KujdestariaID: kuj.KujdestariaID,
+      dita: kuj.dita,
+      nderrimi: kuj.nderrimi,
+      orari_Nga: kuj.orari_Nga,
+      orari_Deri: kuj.orari_Deri,
     });
   }
 
   createClick() {
-    fetch(variables.API_URL + "abonuesi", {
+    fetch(variables.API_URL + "kujdestaria", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        fullName: this.state.fullName,
-        Shkollimi: this.state.Shkollimi,
-        DateOfJoining: this.state.DateOfJoining,
-        VitiLindjes: this.state.VitiLindjes,
+        dita: this.state.dita,
+        nderrimi: this.state.nderrimi,
+        orari_Nga: this.state.orari_Nga,
+        orari_Deri: this.state.orari_Deri,
         Vendbanimi: this.state.Vendbanimi,
       }),
     })
@@ -96,17 +94,18 @@ export class ShtoAbonuesin extends Component {
   }
 
   updateClick() {
-    fetch(variables.API_URL + "abonuesi", {
+    fetch(variables.API_URL + "kujdestaria", {
       method: "PUT",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        fullName: this.state.fullName,
-        Shkollimi: this.state.Shkollimi,
-        DateOfJoining: this.state.DateOfJoining,
-        VitiLindjes: this.state.VitiLindjes,
+        KujdestariaID: this.state.KujdestariaID,
+        dita: this.state.dita,
+        nderrimi: this.state.nderrimi,
+        orari_Nga: this.state.orari_Nga,
+        orari_Deri: this.state.orari_Deri,
         Vendbanimi: this.state.Vendbanimi,
       }),
     })
@@ -124,7 +123,7 @@ export class ShtoAbonuesin extends Component {
 
   deleteClick(id) {
     if (window.confirm("A jeni te sigurt?")) {
-      fetch(variables.API_URL + "abonuesi/" + id, {
+      fetch(variables.API_URL + "kujdestaria/" + id, {
         method: "DELETE",
         headers: {
           Accept: "application/json",
@@ -146,14 +145,13 @@ export class ShtoAbonuesin extends Component {
 
   render() {
     const {
-      abonuesi,
+      kujdestaria,
       modalTitle,
-      AbonuesiId,
-      fullName,
-      Shkollimi,
-      DateOfJoining,
-      VitiLindjes,
-      Vendbanimi,
+      KujdestariaID,
+      dita,
+      nderrimi,
+      orari_Nga,
+      orari_Deri,
     } = this.state;
 
     return (
@@ -165,32 +163,32 @@ export class ShtoAbonuesin extends Component {
           data-bs-target="#exampleModal"
           onClick={() => this.addClick()}
         >
-          Shto Abonuesi
+          Shto Kujdestari
         </button>
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>ID e Abonuesi</th>
-              <th>Emri i Abonuesi</th>
-              <th>Salla e Punes</th>
-              <th>Dita e Abonimit</th>
-              <th>Opsionet</th>
+              <th>ID e Kujdestarise</th>
+              <th>Dita</th>
+              <th>Nderrimi</th>
+              <th>Nga</th>
+              <th>Deri</th>
             </tr>
           </thead>
           <tbody>
-            {abonuesi.map((ab) => (
-              <tr key={ab.AbonuesiId}>
-                <td>{ab.AbonuesiId}</td>
-                <td>{ab.fullName}</td>
-                <td>{ab.Shkollimi}</td>
-                <td>{ab.DateOfJoining}</td>
+            {kujdestaria.map((kuj) => (
+              <tr key={kuj.KujdestariaID}>
+                <td>{kuj.dita}</td>
+                <td>{kuj.nderrimi}</td>
+                <td>{kuj.orari_Nga}</td>
+                <td>{kuj.orari_Deri}</td>
                 <td>
                   <button
                     type="button"
                     className="btn btn-light mr-1"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
-                    onClick={() => this.editClick(ab)}
+                    onClick={() => this.editClick(kuj)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +209,7 @@ export class ShtoAbonuesin extends Component {
                   <button
                     type="button"
                     className="btn btn-light mr-1"
-                    onClick={() => this.deleteClick(ab.AbonuesiId)}
+                    onClick={() => this.deleteClick(kuj.KujdestariaID)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -252,58 +250,47 @@ export class ShtoAbonuesin extends Component {
                 <div className="d-flex flex-row bd-highlight mb-3">
                   <div className="p-2 w-50 bd-highlight">
                     <div className="input-group mb-3">
-                      <span className="input-group-text">Emri & Mbiemri</span>
+                      <span className="input-group-text">Dita</span>
                       <input
                         type="text"
                         className="form-control"
-                        value={fullName}
-                        onChange={this.changefullName}
+                        value={dita}
+                        onChange={this.changedita}
+                      />
+                    </div>
+                    <div className="input-group mb-3">
+                      <span className="input-group-text">Nderrimi</span>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={nderrimi}
+                        onChange={this.changenderrimi}
                       />
                     </div>
 
                     <div className="input-group mb-3">
-                      <span className="input-group-text">VitiLindjes</span>
+                      <span className="input-group-text">Nga</span>
                       <input
                         type="text"
                         className="form-control"
-                        value={VitiLindjes}
-                        onChange={this.changeVitiLindjes}
+                        value={orari_Nga}
+                        onChange={this.changeOrariNga}
                       />
                     </div>
 
                     <div className="input-group mb-3">
-                      <span className="input-group-text">Vendbanimi</span>
+                      <span className="input-group-text">Deri</span>
                       <input
                         type="text"
                         className="form-control"
-                        value={Vendbanimi}
-                        onChange={this.changeVendbanimi}
-                      />
-                    </div>
-
-                    <div className="input-group mb-3">
-                      <span className="input-group-text">Shkollimi</span>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={Shkollimi}
-                        onChange={this.changeShkollimi}
-                      />
-                    </div>
-
-                    <div className="input-group mb-3">
-                      <span className="input-group-text">DateOfJoining</span>
-                      <input
-                        type="date"
-                        className="form-control"
-                        value={DateOfJoining}
-                        onChange={this.changeDateOfJoining}
+                        value={orari_Deri}
+                        onChange={this.changeOrariDeri}
                       />
                     </div>
                   </div>
                 </div>
 
-                {AbonuesiId == 0 ? (
+                {KujdestariaID == 0 ? (
                   <button
                     type="button"
                     className="btn btn-primary float-start"
@@ -313,7 +300,7 @@ export class ShtoAbonuesin extends Component {
                   </button>
                 ) : null}
 
-                {AbonuesiId != 0 ? (
+                {KujdestariaID != 0 ? (
                   <button
                     type="button"
                     className="btn btn-primary float-start"

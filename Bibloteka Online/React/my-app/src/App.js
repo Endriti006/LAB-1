@@ -6,6 +6,7 @@ import { Employee } from "./Employee";
 import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
 import { ImportBook } from "./ImportBook";
 import { ShtoAbonuesin } from "./ShtoAbonuesin";
+import { Kujdestaria } from "./Kujdestaria";
 
 function App() {
   return (
@@ -18,48 +19,60 @@ function App() {
         <nav className="navbar navbar-expand-sm bg-light navbar-dark">
           <ul className="navbar-nav">
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-primary" to="/home">
+              <NavLink className="btn btn-light btn-outline-primary" to="/Home">
                 Home
               </NavLink>
             </li>
             <li className="nav-item- m-1">
               <NavLink
                 className="btn btn-light btn-outline-primary"
-                to="/department"
+                to="/Salla"
               >
-                Sallat
+                Salla
               </NavLink>
             </li>
             <li className="nav-item- m-1">
               <NavLink
                 className="btn btn-light btn-outline-primary"
-                to="/employee"
+                to="/Punetori"
               >
                 Stafi
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-primary" to="/Book">
-                Book
+              <NavLink
+                className="btn btn-light btn-outline-primary"
+                to="/Libri"
+              >
+                Libri
               </NavLink>
             </li>
             <li className="nav-item- m-1">
               <NavLink
                 className="btn btn-light btn-outline-primary"
-                to="/abonuesin"
+                to="/Abonuesi"
               >
-                Abonuesin
+                Abonuesi
+              </NavLink>
+            </li>
+            <li className="nav-item- m-1">
+              <NavLink
+                className="btn btn-light btn-outline-primary"
+                to="/Kujdestaria"
+              >
+                Kujdestaria
               </NavLink>
             </li>
           </ul>
         </nav>
 
         <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/department" component={Department} />
-          <Route path="/employee" component={Employee} />
-          <Route path="/Book" component={ImportBook} />
-          <Route path="/abonuesin" component={ShtoAbonuesin} />
+          <Route path="/Home" component={Home} />
+          <Route path="/Salla" component={Department} />
+          <Route path="/Punetori" component={Employee} />
+          <Route path="/Libri" component={ImportBook} />
+          <Route path="/Abonuesi" component={ShtoAbonuesin} />
+          <Route path="/Kujdestaria" component={Kujdestaria} />
         </Switch>
       </div>
     </BrowserRouter>
