@@ -15,11 +15,11 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AbonuesiController : ControllerBase
+    public class BookController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _env;
-        public AbonuesiController(IConfiguration configuration, IWebHostEnvironment env)
+        public BookController(IConfiguration configuration, IWebHostEnvironment env)
         {
             _configuration = configuration;
             _env = env;
@@ -30,10 +30,10 @@ namespace WebApplication1.Controllers
         public JsonResult Get()
         {
             string query = @"
-                            select AbonuesiId, fullName,Shkollimi,VitiLindjes,Vendbanimi,
-                            convert(varchar(10),DateOfJoining,120) as DateOfJoining
+                            select BookId, BookName,BookAuthor,
+                            convert(varchar(10),publishDate,120) as publishDate,PhotoFileName, Genre
                             from
-                            dbo.Abonuesi
+                            dbo.Book
                             ";
 
             DataTable table = new DataTable();
@@ -55,12 +55,12 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public JsonResult Post(Abonuesi ab)
+        public JsonResult Post(ImportBook bk)
         {
             string query = @"
-                           insert into dbo.Abonuesi
-                           (fullName,Shkollimi,DateOfJoining,VitiLindjes,Vendbanimi)
-                    values (@fullName,@Shkollimi,@DateOfJoining,@VitiLindjes,@Vendbanimi)
+                           insert into dbo.Book
+                           (BookName,BookAuthor,publishDate,PhotoFileName, Genre)
+                    values (@BookName,@BookAuthor,@publishDate,@PhotoFileName, @Genre)
                             ";
 
             DataTable table = new DataTable();
@@ -71,11 +71,11 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@fullName", ab.fullName);
-                    myCommand.Parameters.AddWithValue("@Shkollimi", ab.Shkollimi);
-                    myCommand.Parameters.AddWithValue("@DateOfJoining", ab.DateOfJoining);
-                    myCommand.Parameters.AddWithValue("@VitiLindjes", ab.VitiLindjes);
-                    myCommand.Parameters.AddWithValue("@Vendbanimi", ab.Vendbanimi);
+                    myCommand.Parameters.AddWithValue("@BookName", bk.BookName);
+                    myCommand.Parameters.AddWithValue("@BookAuthor", bk.BookAuthor);
+                    myCommand.Parameters.AddWithValue("@publishDate", bk.publishDate);
+                    myCommand.Parameters.AddWithValue("@PhotoFileName", bk.PhotoFileName);
+                    myCommand.Parameters.AddWithValue("@Genre", bk.Genre);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
@@ -88,16 +88,15 @@ namespace WebApplication1.Controllers
 
 
         [HttpPut]
-        public JsonResult Put(Abonuesi ab)
+        public JsonResult Put(ImportBook bk)
         {
             string query = @"
-                           update dbo.Abonuesi
-                           set fullName= @fullName,
-                            Shkollimi=@Shkollimi,
-                            DateOfJoining=@DateOfJoining,
-                            VitiLindjes=@VitiLindjes
-                            Vendbanimi=@Vendbanimi
-                            where AbonuesiId = @AbonuesiId
+                           update dbo.Book
+                           set BookName= @BookName,
+                            BookAuthor=@BookAuthor,
+                            publishDate=@publishDate,
+                            PhotoFileName=@PhotoFileName
+                            where BookId=@BookId
                             ";
 
             DataTable table = new DataTable();
@@ -108,12 +107,12 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@AbonuesiId", ab.AbonuesiId);
-                    myCommand.Parameters.AddWithValue("@fullName", ab.fullName);
-                    myCommand.Parameters.AddWithValue("@Shkollimi", ab.Shkollimi);
-                    myCommand.Parameters.AddWithValue("@DateOfJoining", ab.DateOfJoining);
-                    myCommand.Parameters.AddWithValue("@VitiLindjes", ab.VitiLindjes);
-                    myCommand.Parameters.AddWithValue("@Vendbanimi", ab.Vendbanimi);
+                    myCommand.Parameters.AddWithValue("@BookId", bk.BookId);
+                    myCommand.Parameters.AddWithValue("@BookName", bk.BookName);
+                    myCommand.Parameters.AddWithValue("@BookAuthor", bk.BookAuthor);
+                    myCommand.Parameters.AddWithValue("@publishDate", bk.publishDate);
+                    myCommand.Parameters.AddWithValue("@PhotoFileName", bk.PhotoFileName);
+                    myCommand.Parameters.AddWithValue("@Genre", bk.Genre);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
@@ -128,8 +127,8 @@ namespace WebApplication1.Controllers
         public JsonResult Delete(int id)
         {
             string query = @"
-                           delete from dbo.Abonuesi
-                            where AbonuesiId=@AbonuesiId
+                           delete from dbo.Book
+                            where BookId=@BookId
                             ";
 
             DataTable table = new DataTable();
@@ -140,7 +139,7 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@AbonuesiId", id);
+                    myCommand.Parameters.AddWithValue("@BookId", id);
 
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
@@ -153,7 +152,31 @@ namespace WebApplication1.Controllers
         }
 
 
+        [Route("SaveFile")]
+        [HttpPost]
+        public JsonResult SaveFile()
+        {
+            try
+            {
+                var httpRequest = Request.Form;
+                var postedFile = httpRequest.Files[0];
+                string filename = postedFile.FileName;
+                var physicalPath = _env.ContentRootPath + "/Photos/" + filename;
+
+                using (var stream = new FileStream(physicalPath, FileMode.Create))
+                {
+                    postedFile.CopyTo(stream);
+                }
+
+                return new JsonResult(filename);
+            }
+            catch (Exception)
+            {
+
+                return new JsonResult("anonymous.png");
+            }
+        }
+
     }
 }
-
 

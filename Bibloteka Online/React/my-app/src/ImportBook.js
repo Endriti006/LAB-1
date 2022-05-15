@@ -1,27 +1,62 @@
 import React, { Component } from "react";
 import { variables } from "./Variables.js";
 
-export class ShtoAbonuesin extends Component {
+export class ImportBook extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      abonuesi: [],
+      book: [],
       modalTitle: "",
-      AbonuesiId: 0,
-      fullName: "",
-      Shkollimi: "",
-      DateOfJoining: "",
-      VitiLindjes: "",
-      Vendbanimi: "",
+      BookId: 0,
+      BookName: "",
+      BookAuthor: "",
+      publishDate: "",
+      PhotoFileName: "anonymous.png",
+      PhotoPath: variables.PHOTO_URL,
+      Genre: "",
+      BookNameFilter: "",
+      BookIdFilter: "",
     };
   }
 
+  //Pjesa e Filterit....
+  FilterFn() {
+    var BookNameFilter = this.state.BookNameFilter;
+    var BookIdFilter = this.state.BookIdFilter;
+
+    var filteredData = this.state.booksWithoutFilter.filter(function (el) {
+      return (
+        el.BookId.toString()
+          .toLowerCase()
+          .includes(BookIdFilter.toString().trim().toLowerCase()) &&
+        el.BookName.toString()
+          .toLowerCase()
+          .includes(BookNameFilter.toString().trim().toLowerCase())
+      );
+    });
+
+    this.setState({ book: filteredData });
+  }
+
+  sortResult(prop, asc) {
+    var sortedData = this.state.booksWithoutFilter.sort(function (a, b) {
+      if (asc) {
+        return a[prop] > b[prop] ? 1 : a[prop] < b[prop] ? -1 : 0;
+      } else {
+        return b[prop] > a[prop] ? 1 : b[prop] < a[prop] ? -1 : 0;
+      }
+    });
+
+    this.setState({ book: sortedData });
+  }
+
+  //Pjesa tjeter
   refreshList() {
-    fetch(variables.API_URL + "abonuesi")
+    fetch(variables.API_URL + "book")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ abonuesi: data });
+        this.setState({ book: data });
       });
   }
 
@@ -29,58 +64,74 @@ export class ShtoAbonuesin extends Component {
     this.refreshList();
   }
 
-  changefullName = (e) => {
-    this.setState({ fullName: e.target.value });
+  changeBookName = (e) => {
+    this.setState({ BookName: e.target.value });
   };
-  changeShkollimi = (e) => {
-    this.setState({ Shkollimi: e.target.value });
+  changeBookAuthor = (e) => {
+    this.setState({ BookAuthor: e.target.value });
   };
-  changeDateOfJoining = (e) => {
-    this.setState({ DateOfJoining: e.target.value });
+  changepublishDate = (e) => {
+    this.setState({ publishDate: e.target.value });
   };
-  changeVitiLindjes = (e) => {
-    this.setState({ VitiLindjes: e.target.value });
+
+  changeGenre = (e) => {
+    this.setState({ Genre: e.target.value });
   };
-  changeVendbanimi = (e) => {
-    this.setState({ Vendbanimi: e.target.value });
+
+  changeBookNameFilter = (e) => {
+    this.state.BookNameFilter = e.target.value;
+    this.FilterFn();
   };
+
+  changeBookIdFilter = (e) => {
+    this.state.BookIdFilter = e.target.value;
+    this.FilterFn();
+  };
+
+  refreshList() {
+    fetch(variables.API_URL + "book")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ book: data, booksWithoutFilter: data });
+      });
+  }
 
   addClick() {
     this.setState({
-      modalTitle: "Shto Abonuesin",
-      AbonuesiId: 0,
-      fullName: "",
-      Shkollimi: "",
-      DateOfJoining: "",
-      VitiLindjes: "",
-      Vendbanimi: "",
+      modalTitle: "Shto Librin",
+      BookId: 0,
+      BookName: "",
+      BookAuthor: "",
+      publishDate: "",
+      PhotoFileName: "anonymous.png",
+      Genre: "",
     });
   }
-  editClick(ab) {
+  editClick(bk) {
     this.setState({
-      modalTitle: "Edit Abonuesin",
-      AbonuesiId: ab.AbonuesiId,
-      fullName: ab.fullName,
-      Shkollimi: ab.Shkollimi,
-      DateOfJoining: ab.DateOfJoining,
-      VitiLindjes: ab.VitiLindjes,
-      Vendbanimi: ab.Vendbanimi,
+      modalTitle: "Edit Book",
+      BookId: bk.BookId,
+      BookName: bk.BookName,
+      BookAuthor: bk.BookAuthor,
+      publishDate: bk.publishDate,
+      PhotoFileName: bk.PhotoFileName,
+      Genre: bk.Genre,
     });
   }
 
   createClick() {
-    fetch(variables.API_URL + "abonuesi", {
+    fetch(variables.API_URL + "book", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        fullName: this.state.fullName,
-        Shkollimi: this.state.Shkollimi,
-        DateOfJoining: this.state.DateOfJoining,
-        VitiLindjes: this.state.VitiLindjes,
-        Vendbanimi: this.state.Vendbanimi,
+        BookName: this.state.BookName,
+        BookAuthor: this.state.BookAuthor,
+        publishDate: this.state.publishDate,
+        PhotoFileName: this.state.PhotoFileName,
+        Genre: this.state.Genre,
       }),
     })
       .then((res) => res.json())
@@ -96,18 +147,19 @@ export class ShtoAbonuesin extends Component {
   }
 
   updateClick() {
-    fetch(variables.API_URL + "abonuesi", {
+    fetch(variables.API_URL + "book", {
       method: "PUT",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        fullName: this.state.fullName,
-        Shkollimi: this.state.Shkollimi,
-        DateOfJoining: this.state.DateOfJoining,
-        VitiLindjes: this.state.VitiLindjes,
-        Vendbanimi: this.state.Vendbanimi,
+        BookId: this.state.BookId,
+        BookName: this.state.BookName,
+        BookAuthor: this.state.BookAuthor,
+        publishDate: this.state.publishDate,
+        PhotoFileName: this.state.PhotoFileName,
+        Genre: this.state.Genre,
       }),
     })
       .then((res) => res.json())
@@ -124,7 +176,7 @@ export class ShtoAbonuesin extends Component {
 
   deleteClick(id) {
     if (window.confirm("A jeni te sigurt?")) {
-      fetch(variables.API_URL + "abonuesi/" + id, {
+      fetch(variables.API_URL + "book/" + id, {
         method: "DELETE",
         headers: {
           Accept: "application/json",
@@ -144,16 +196,33 @@ export class ShtoAbonuesin extends Component {
     }
   }
 
+  imageUpload = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("file", e.target.files[0], e.target.files[0].name);
+
+    fetch(variables.API_URL + "book/savefile", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ PhotoFileName: data });
+      });
+  };
+
   render() {
     const {
-      abonuesi,
+      book,
       modalTitle,
-      AbonuesiId,
-      fullName,
-      Shkollimi,
-      DateOfJoining,
-      VitiLindjes,
-      Vendbanimi,
+      BookId,
+      BookName,
+      BookAuthor,
+      publishDate,
+      PhotoPath,
+      PhotoFileName,
+      Genre,
     } = this.state;
 
     return (
@@ -165,32 +234,53 @@ export class ShtoAbonuesin extends Component {
           data-bs-target="#exampleModal"
           onClick={() => this.addClick()}
         >
-          Shto Abonuesi
+          Shto Librin
         </button>
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>ID e Abonuesi</th>
-              <th>Emri i Abonuesi</th>
-              <th>Salla e Punes</th>
-              <th>Dita e Abonimit</th>
+              <th>
+                <div className="d-flex flex-row">
+                  <input
+                    className="form-control m-2"
+                    onChange={this.changeBookNameFilter}
+                    placeholder="Filtrues sipas Emrit"
+                  />
+                </div>
+              </th>
+            </tr>
+
+            <tr>
+              <th>ID e Librit</th>
+              <th>Emri i Librit</th>
+              <th>Emri i Autori</th>
+              <th>Viti i Publikimit</th>
+              <th>Zhanra</th>
+              <th>Foto</th>
               <th>Opsionet</th>
             </tr>
           </thead>
           <tbody>
-            {abonuesi.map((ab) => (
-              <tr key={ab.AbonuesiId}>
-                <td>{ab.AbonuesiId}</td>
-                <td>{ab.fullName}</td>
-                <td>{ab.Shkollimi}</td>
-                <td>{ab.DateOfJoining}</td>
+            {book.map((bk) => (
+              <tr key={bk.BookId}>
+                <td>{bk.BookId}</td>
+                <td>{bk.BookName}</td>
+                <td>{bk.BookAuthor}</td>
+                <td>{bk.publishDate}</td>
+                <td>{bk.Genre}</td>
+                <td>
+                  <img
+                    class="Bookfoto"
+                    src={variables.PHOTO_URL + bk.PhotoFileName}
+                  ></img>
+                </td>
                 <td>
                   <button
                     type="button"
                     className="btn btn-light mr-1"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
-                    onClick={() => this.editClick(ab)}
+                    onClick={() => this.editClick(bk)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +301,7 @@ export class ShtoAbonuesin extends Component {
                   <button
                     type="button"
                     className="btn btn-light mr-1"
-                    onClick={() => this.deleteClick(ab.AbonuesiId)}
+                    onClick={() => this.deleteClick(bk.BookId)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -252,58 +342,62 @@ export class ShtoAbonuesin extends Component {
                 <div className="d-flex flex-row bd-highlight mb-3">
                   <div className="p-2 w-50 bd-highlight">
                     <div className="input-group mb-3">
-                      <span className="input-group-text">Emri & Mbiemri</span>
+                      <span className="input-group-text">Emri i Librit</span>
                       <input
                         type="text"
                         className="form-control"
-                        value={fullName}
-                        onChange={this.changefullName}
+                        value={BookName}
+                        onChange={this.changeBookName}
                       />
                     </div>
 
                     <div className="input-group mb-3">
-                      <span className="input-group-text">VitiLindjes</span>
+                      <span className="input-group-text">Emri i Autori</span>
                       <input
                         type="text"
                         className="form-control"
-                        value={VitiLindjes}
-                        onChange={this.changeVitiLindjes}
+                        value={BookAuthor}
+                        onChange={this.changeBookAuthor}
                       />
                     </div>
 
                     <div className="input-group mb-3">
-                      <span className="input-group-text">Vendbanimi</span>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={Vendbanimi}
-                        onChange={this.changeVendbanimi}
-                      />
-                    </div>
-
-                    <div className="input-group mb-3">
-                      <span className="input-group-text">Shkollimi</span>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={Shkollimi}
-                        onChange={this.changeShkollimi}
-                      />
-                    </div>
-
-                    <div className="input-group mb-3">
-                      <span className="input-group-text">DateOfJoining</span>
+                      <span className="input-group-text">
+                        Data e Publikimit
+                      </span>
                       <input
                         type="date"
                         className="form-control"
-                        value={DateOfJoining}
-                        onChange={this.changeDateOfJoining}
+                        value={publishDate}
+                        onChange={this.changepublishDate}
+                      />
+                    </div>
+
+                    <div className="input-group mb-3">
+                      <span className="input-group-text">Zhanra</span>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={Genre}
+                        onChange={this.changeGenre}
                       />
                     </div>
                   </div>
+                  <div className="p-2 w-50 bd-highlight">
+                    <img
+                      width="250px"
+                      height="250px"
+                      src={PhotoPath + PhotoFileName}
+                    />
+                    <input
+                      className="m-2"
+                      type="file"
+                      onChange={this.imageUpload}
+                    />
+                  </div>
                 </div>
 
-                {AbonuesiId == 0 ? (
+                {BookId == 0 ? (
                   <button
                     type="button"
                     className="btn btn-primary float-start"
@@ -313,7 +407,7 @@ export class ShtoAbonuesin extends Component {
                   </button>
                 ) : null}
 
-                {AbonuesiId != 0 ? (
+                {BookId != 0 ? (
                   <button
                     type="button"
                     className="btn btn-primary float-start"
