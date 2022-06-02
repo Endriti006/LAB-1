@@ -103,6 +103,7 @@ export class ShtoAbonuesin extends Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        AbonuesiId: this.state.AbonuesiId,
         fullName: this.state.fullName,
         Shkollimi: this.state.Shkollimi,
         DateOfJoining: this.state.DateOfJoining,
