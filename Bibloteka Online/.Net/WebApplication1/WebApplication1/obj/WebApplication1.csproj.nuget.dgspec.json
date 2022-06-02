@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Main PC\\Desktop\\Projekti LAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Main PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-        "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\artsh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\artsh\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 2580138a59f0b053466f688bfe39c4654013702f
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

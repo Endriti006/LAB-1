@@ -665,16 +665,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Main PC\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\artsh\\.nuget\\packages\\": {}
->>>>>>> 2580138a59f0b053466f688bfe39c4654013702f
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Main PC\\Desktop\\Projekti LAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
       "projectPath": "C:\\Users\\Main PC\\Desktop\\Projekti LAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
@@ -683,16 +678,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Main PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\artsh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artsh\\Desktop\\Projektiiiii\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\artsh\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 2580138a59f0b053466f688bfe39c4654013702f
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -748,5 +733,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Main PC\\Desktop\\Projekti LAB1\\LAB-1\\Bibloteka Online\\.Net\\WebApplication1\\WebApplication1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
