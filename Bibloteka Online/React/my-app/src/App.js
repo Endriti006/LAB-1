@@ -9,6 +9,7 @@ import { ShtoAbonuesin } from "./ShtoAbonuesin";
 import { Kujdestaria } from "./Kujdestaria";
 import { KutiaAnkesa } from './KutiaAnkesa';
 import {Donuesi} from './Donuesi'
+import {AudioBooks} from './AudioBooks'
 
 function App() {
   return (
@@ -75,6 +76,11 @@ function App() {
             Donuesi
             </NavLink>
           </li>
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/audiobook">
+            Audio Book
+            </NavLink>
+          </li>
           </ul>
         </nav>
 
@@ -86,6 +92,7 @@ function App() {
           <Route path="/Abonuesi" component={ShtoAbonuesin} />
           <Route path="/Kujdestaria" component={Kujdestaria} />
           <Route path='/Donuesi' component={Donuesi}/>
+          <Route path='/audiobook' component={AudioBooks}/>
         </Switch>
       </div>
     </BrowserRouter>
