@@ -8,11 +8,12 @@ export class Orari extends Component{
 
         this.state={
             Orari:[],
+            Employee:[],
             modalTitle:"",
             OrariId:0,
             FullName:"",
             Pushimi:"",
-            Vendbanimi:"",
+            
             
         }
     }
@@ -23,6 +24,13 @@ export class Orari extends Component{
         .then(response=>response.json())
         .then(data=>{
             this.setState({Orari:data});
+            
+        });
+
+        fetch(variables.API_URL+'employee')
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({Employee:data});
         });
     }
 
@@ -37,17 +45,13 @@ export class Orari extends Component{
         this.setState({Pushimi:e.target.value});
     
     }
-    changeVendbanimi =(e)=>{
-        this.setState({Vendbanimi:e.target.value});
-    }
 
     addClick(){
         this.setState({
             modalTitle:"Orari",
             OrariId:0,
             FullName:"",
-            Pushimi:"",
-            Vendbanimi:""
+            Pushimi:""
         });
     }
     editClick(or){
@@ -56,7 +60,6 @@ export class Orari extends Component{
             OrariId:or.OrariId,
             FullName:or.FullName,
             Pushimi:or.Shkollimi,
-            Vendbanimi:or.Vendbanimi
         });
     }
 
@@ -69,8 +72,7 @@ export class Orari extends Component{
             },
             body:JSON.stringify({
                 FullName:this.state.FullName,
-                Pushimi:this.state. Pushimi,
-                Vendbanimi:this.state.Vendbanimi
+                Pushimi:this.state. Pushimi
             })
         })
         .then(res=>res.json())
@@ -93,8 +95,7 @@ export class Orari extends Component{
             body:JSON.stringify({
                 OrariId:this.state.OrariId,
                 FullName:this.state.FullName,
-                Pushimi:this.state.Pushimi,
-                Vendbanimi:this.state.Vendbanimi
+                Pushimi:this.state.Pushimi
             })
         })
         .then(res=>res.json())
@@ -133,7 +134,7 @@ export class Orari extends Component{
             OrariId,
             FullName,
             Pushimi,
-            Vendbanimi
+            Employee
         }=this.state;
 
         return(
@@ -156,10 +157,6 @@ export class Orari extends Component{
             Emri i Stafit
         </th>
         <th>
-            Vendbanimi
-        </th>
-        
-        <th>
             Pushimi
         </th>
         <th>
@@ -172,7 +169,6 @@ export class Orari extends Component{
             <tr key={or.OrariId}>
                 <td>{or.OrariId}</td>
                 <td>{or.FullName}</td>
-                <td>{or.Vendbanimi}</td>
                 <td>{or.Pushimi}</td>
                 <td>
                 <button type="button"
@@ -214,18 +210,15 @@ export class Orari extends Component{
      
      <div className="p-2 w-50 bd-highlight">
     
-        <div className="input-group mb-3">
-            <span className="input-group-text">Emri & Mbiemri</span>
-            <input type="text" className="form-control"
-            value={FullName}
-            onChange={this.changeFullName}/>
-        </div>
-
-        <div className="input-group mb-3">
-            <span className="input-group-text">Vendbanimi</span>
-            <input type="text" className="form-control"
-            value={Vendbanimi}
-            onChange={this.changeVendbanimi}/>
+     <div className="input-group mb-3">
+            <span className="input-group-text">Emri dhe Mbiemri</span>
+            <select className="form-select"
+            onChange={this.changeFullName}
+            value={FullName}>
+                {Employee.map(dep=><option key={dep.EmployeeId}>
+                    {dep.EmployeeName}
+                </option>)}
+            </select>
         </div>
 
         <div className="input-group mb-3">

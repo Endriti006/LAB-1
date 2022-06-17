@@ -11,7 +11,6 @@ namespace WebApplication1.Models
         public string FullName { get; set; }
         public string Pushimi { get; set; }
 
-        public string Vendbanimi { get; set; }
 
     }
 }

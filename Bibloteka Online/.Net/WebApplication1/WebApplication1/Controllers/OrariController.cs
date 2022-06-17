@@ -32,8 +32,7 @@ namespace WebApplication1.Controllers
            
 
             string query = @"
-                            select OrariId, FullName,convert(varchar(10),Pushimi,120) as Pushimi,
-                            Vendbanimi
+                            select OrariId,FullName,convert(varchar(10),Pushimi,120) as Pushimi
                             from
                             dbo.Orari
                             ";
@@ -61,8 +60,8 @@ namespace WebApplication1.Controllers
         {
             string query = @"
                            insert into dbo.Orari
-                           (FullName,Pushimi,Vendbanimi)
-                    values (@FullName,@Pushimi,@Vendbanimi)
+                           (FullName,Pushimi)
+                    values (@FullName,@Pushimi)
                             ";
 
             DataTable table = new DataTable();
@@ -75,7 +74,6 @@ namespace WebApplication1.Controllers
                 {
                     myCommand.Parameters.AddWithValue("@FullName", or.FullName);
                     myCommand.Parameters.AddWithValue("@Pushimi", or.Pushimi);
-                    myCommand.Parameters.AddWithValue("@Vendbanimi", or.Vendbanimi);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
@@ -92,9 +90,8 @@ namespace WebApplication1.Controllers
         {
             string query = @"
                            update dbo.Orari
-                           set FullName= @FullName,
-                            Pushimi=@Pushimi,
-                            Vendbanimi=@Vendbanimi
+                           set FullName=@FullName,
+                            Pushimi=@Pushimi
                             where OrariId=@OrariId
                             ";
 
@@ -109,8 +106,6 @@ namespace WebApplication1.Controllers
                     myCommand.Parameters.AddWithValue("@OrariId", or.OrariId);
                     myCommand.Parameters.AddWithValue("@FullName", or.FullName);
                     myCommand.Parameters.AddWithValue("@Pushimi", or.Pushimi);
-                 
-                    myCommand.Parameters.AddWithValue("@Vendbanimi", or.Vendbanimi);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
