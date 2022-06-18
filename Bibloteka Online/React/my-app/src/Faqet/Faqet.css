@@ -1,0 +1,18 @@
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.td-libri{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 0px;;
+    overflow: hidden;
+}
+
+img{
+    width: 261px;
+    height: 350px;
+}
+
