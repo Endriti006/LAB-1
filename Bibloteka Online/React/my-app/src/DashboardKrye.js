@@ -42,7 +42,7 @@ function DashboardKrye({authorized}) {
             <li className="nav-item- m-1">
               <NavLink
                 className="btn btn-light btn-outline-primary"
-                to="/Punetori"
+                to="/Employee"
               >
                 Stafi
               </NavLink>
@@ -109,11 +109,6 @@ function DashboardKrye({authorized}) {
           <li className="nav-item- m-1">
             <NavLink className="btn btn-light btn-outline-primary" to="/Kryesori">
             Kryesori
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-light btn-outline-primary" to="/Employee">
-            Stafi
             </NavLink>
           </li>
 

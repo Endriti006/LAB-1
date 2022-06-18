@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import "./App.css";
 import { BrowserRouter, Route, Switch, NavLink , Redirect} from "react-router-dom";
-import { KutiaAnkesa } from './KutiaAnkesa';
 import { LibriAbo } from './Faqet/LibriAbo';
 import { AudioAbo } from './Faqet/AudioAbo';
-import { KutiaAnkesaStaf } from './Faqet/KutiaAnkesaStaf';
 
 
 
@@ -50,10 +48,8 @@ function DashboardAbo({authorized}) {
         </nav>
 
         <Switch>
-          <Route path='/kutiaankesa' component={KutiaAnkesa}/>
           <Route path='/libri' component={LibriAbo}/>
           <Route path='/audiobook' component={AudioAbo}/>
-          <Route path='/KutiaAnkesaStaf' component={KutiaAnkesaStaf}/>
         </Switch>
         </div>
 

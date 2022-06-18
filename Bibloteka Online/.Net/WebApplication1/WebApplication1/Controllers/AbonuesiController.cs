@@ -95,7 +95,7 @@ namespace WebApplication1.Controllers
                            set fullName= @fullName,
                             Shkollimi=@Shkollimi,
                             DateOfJoining=@DateOfJoining,
-                            VitiLindjes=@VitiLindjes
+                            VitiLindjes=@VitiLindjes,
                             Vendbanimi=@Vendbanimi
                             where AbonuesiId = @AbonuesiId
                             ";
