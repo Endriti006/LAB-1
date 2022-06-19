@@ -21,11 +21,7 @@ function DashboardAbo({authorized}) {
         
         <nav className="navbar navbar-expand-sm bg-light navbar-dark">
           <ul className="navbar-nav">
-            <li className="nav-item- m-1">
-            <NavLink className="btn btn-light btn-outline-primary" to="/kutiaankesa">
-            Kutia e Ankesave
-            </NavLink>
-          </li>
+
           <li className="nav-item- m-1">
             <NavLink className="btn btn-light btn-outline-primary" to="/libri">
             Libri
@@ -37,11 +33,6 @@ function DashboardAbo({authorized}) {
             </NavLink>
           </li>
 
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-light btn-outline-primary" to="/KutiaAnkesaStaf">
-            Kutia e Ankesave
-            </NavLink>
-          </li>
 
 
           </ul>
