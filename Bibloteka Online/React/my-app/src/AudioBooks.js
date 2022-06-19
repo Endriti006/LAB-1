@@ -255,7 +255,7 @@ export class AudioBooks extends Component {
               <th>Emri i AudioBookit</th>
               <th>Emri i Autorit te AudioBookit</th>
               <th>Zhanra</th>
-              <th>Foto</th>
+              <th>Audio</th>
               <th>Opsionet</th>
             </tr>
           </thead>

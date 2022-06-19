@@ -173,11 +173,13 @@ export class Kujdestaria extends Component {
               <th>Nderrimi</th>
               <th>Nga</th>
               <th>Deri</th>
+              <th>Opsionet</th>
             </tr>
           </thead>
           <tbody>
             {kujdestaria.map((kuj) => (
               <tr key={kuj.KujdestariaID}>
+                <td>{kuj.KujdestariaID}</td>
                 <td>{kuj.dita}</td>
                 <td>{kuj.nderrimi}</td>
                 <td>{kuj.orari_Nga}</td>

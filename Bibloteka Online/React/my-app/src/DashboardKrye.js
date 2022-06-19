@@ -14,6 +14,7 @@ import {Donuesi} from './Donuesi'
 import {Orariipunes} from './Orariipunes';
 import {Tavolina} from './Tavolina';
 import {Huazimi} from './Huazimi';
+import {Rezervimi} from './Rezervimi'
 
 
 function DashboardKrye({authorized}) {
@@ -111,6 +112,12 @@ function DashboardKrye({authorized}) {
             Kryesori
             </NavLink>
           </li>
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/Rezervimi">
+            Rezervimi
+            </NavLink>
+          </li>
+          
 
 
           </ul>
@@ -130,6 +137,7 @@ function DashboardKrye({authorized}) {
           <Route path='/Huazimi' component={Huazimi}/>
           <Route path='/Employee' component={Employee}/>
           <Route path='/Kryesori' component={Kryesori}/>
+          <Route path='/Rezervimi' component={Rezervimi}/>
         </Switch>
         </div>
 

@@ -12,6 +12,7 @@ import {Donuesi} from './Donuesi'
 import {Orariipunes} from './Orariipunes';
 import {Tavolina} from './Tavolina';
 import {Huazimi} from './Huazimi';
+import {Rezervimi} from './Rezervimi';
 
 
 function DashboardStaf({authorized}) {
@@ -35,14 +36,6 @@ function DashboardStaf({authorized}) {
                 to="/Salla"
               >
                 Salla
-              </NavLink>
-            </li>
-            <li className="nav-item- m-1">
-              <NavLink
-                className="btn btn-light btn-outline-primary"
-                to="/Punetori"
-              >
-                Stafi
               </NavLink>
             </li>
             <li className="nav-item- m-1">
@@ -104,6 +97,11 @@ function DashboardStaf({authorized}) {
             Huazimi
             </NavLink>
           </li>
+          <li className="nav-item- m-1">
+            <NavLink className="btn btn-light btn-outline-primary" to="/Rezervimi">
+            Rezervimi
+            </NavLink>
+          </li>
 
 
           </ul>
@@ -121,6 +119,7 @@ function DashboardStaf({authorized}) {
           <Route path='/Orariipunes' component={Orariipunes}/>
           <Route path='/Tavolina' component={Tavolina}/>
           <Route path='/Huazimi' component={Huazimi}/>
+          <Route path='/Rezervimi' component={Rezervimi}/>
         </Switch>
         </div>
 
